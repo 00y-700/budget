@@ -1,4 +1,4 @@
-const FILES_TO_CACHE = [
+const CACHE = [
     '/',
     '/index.js',
     '/style.css',
@@ -14,7 +14,7 @@ const FILES_TO_CACHE = [
     e.waitUntil(
       caches
         .open(CACHE1)
-        .then((cache) => cache.addAll(FILES_TO_CACHE))
+        .then((cache) => cache.addAll(CACHE))
         .then(self.skipWaiting())
     );
   });
