@@ -20,11 +20,13 @@ request.onsuccess = function(event) {
      };
       
 };
-function saved(record) {
+function saveRecord(record) {
+    console.log(record);
     const transaction = db.transaction(["pending"], "readwrite");
     const store = transaction.objectStore("pending");
     store.add(record);
 }
+
 function checkDatabase() {
     const transaction = db.transaction(["pending"], "readwrite");
     const store = transaction.objectStore("pending");
