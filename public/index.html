@@ -40,7 +40,19 @@
     
     <canvas id="myChart"></canvas>
   </div>
-
+  <script>
+    if ("serviceWorker" in navigator){
+      window.addEventListener("load", function(){
+        navigator.serviceWorker.register("service-worker.js").then(function(registration){
+          console.log("register success", registration.scope)
+        },function(err){
+          console.log("register fail", err)
+        }).catch(function(err){
+          console.log(err)
+        })
+      })
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="db.js"></script>
   <script src="index.js"></script>
